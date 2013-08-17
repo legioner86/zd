@@ -62,6 +62,7 @@ sub login {
     }
 }
 
+#вход
 sub vhod {
 
     my $this = shift;
@@ -79,11 +80,28 @@ sub vhod {
     print "Location: index.pl\n\n";
 }
 
+#сброс сессии
+sub logout {
+
+ my $this = shift;
+
+  my %cookies         = fetch CGI::Cookie;
+     $cookies{'session'} = $cookies{'session'}->value;
+     $cookies{'session'} =~s /[\W]//g;
+     $cookies{'session'} = 'empty' unless $cookies{'session'};
+
+     if(exists $cookies{'session'}){
+
+        $this->{dbh}->do("DELETE FROM session WHERE session = \'$cookies{'session'}\' LIMIT 1");#обновляем сессию
+     }
+     print "Content-type:text/html\n\n";
+}
 
 package main;
 
 my $cgi     = CGI->new;
-my $login   = $cgi->param('login') || '';
+my $login   = $cgi->param('login')  || '';
+my $action  = $cgi->param('action') || '';
 my $auth    = auth->new({host => $var{'host'},
                          port => $var{'port'},
                          base => $var{'base'},
@@ -94,4 +112,8 @@ if ($login ne ''){
 
     my $pass  = $cgi->param('pass')  || '123';
     $auth->login({login => $login, pass => $pass});
+}
+
+if ($action eq 'logout'){
+    $auth->logout();
 }

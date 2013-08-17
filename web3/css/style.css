@@ -45,3 +45,7 @@ input[type="checkbox"] {
 #progressbar {
     width: 100%;
 }
+
+#logout {
+    float: right;
+}

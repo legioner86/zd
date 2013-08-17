@@ -11,6 +11,20 @@ function nextquote(){
 }
 
 /**
+ * выход
+ */
+function logout(){
+    $.ajax({
+        type: 'POST',
+        url: 'login.pl',
+        data: 'action=logout',
+        success: function(data){
+            location.href = 'index.pl';
+        }
+    });
+}
+
+/**
  * предыдущий коментарий
  */
 function prev_quote(){
