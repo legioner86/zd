@@ -1,0 +1,25 @@
+.hellow{
+    text-align: center;
+}
+
+textarea {
+    width: 700px;
+}
+
+.messages {
+    border: 1px solid;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.leftbord {
+    border-right: 1px dashed;
+}
+
+#wrap .messages {
+    background-color: #c4e3f3;
+}
+
+#wrap .messages:nth-child(2n-1) {
+    background-color: #bce8f1;
+}
