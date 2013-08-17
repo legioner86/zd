@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Mailer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="отправка емейла" name="keywords">
+    <meta content="отправка емейла" name="description">
+    <!-- Поиграемся с бутстрапом -->
+    <script src="js/jquery.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/style.css" rel="stylesheet" media="screen">
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/run.js"></script>
+</head>
+<body>
+<div class="container" style="margin-top: 50px;">
+    <div class="thumbnail hellow">
+        <h1>отправим сообщение</h1>
+    </div>
+    <!-- юлок отправки сообщения -->
+    <div class="row" style="margin-top: 10px;">
+        <form action="" method="post">
+            <div class="span12">
+                <input type="text" size="70" name="login" value="" id="login" placeholder="тема"
+                       onkeyup="return validate(event, this)" maxlength="35">
+                <input type="text" size="70" name="email" value="" id="email" placeholder="E-mail"
+                       onkeyup="return validate(event, this)" maxlength="35">
+
+            </div>
+            <div class="span12">
+                <textarea rows="2" name="message" value="" id="message" placeholder="Сообщение"></textarea>
+            </div>
+                <div class="span thumbnail"><b id="capcha"></b>  <input type="checkbox" id="cap"></div>
+                <input type="button" id="sendmessage" class="btn btn-primary" value="Отправить сообщение" onclick="sendMessage()">
+
+
+        </form>
+    </div>
+</div>
+</body>
+</html>
