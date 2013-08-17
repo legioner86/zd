@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>reeder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="Reeder " name="keywords">
+    <meta content="Reeder " name="description">
+    <!-- Поиграемся с бутстрапом -->
+    <script src="js/jquery.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/style.css" rel="stylesheet" media="screen">
+
+</head>
+<body>
+    <div class="container" style="margin-top: 50px;">
+        <div class="thumbnail hellow">
+            <h1>Введенный пароль неверный</h1>
+        </div>
+        <input type="button" class="btn btn-large btn-block btn-primary" onclick="location.href='index.pl'" value="Попробовать ещё раз!">
+
+        <div class="progress progress-striped active">
+            <div class="bar"  id="progressbar" style="width: 0%"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        setTimeout(function(){location.href='index.pl'},6000);
+        var progressbar = $('#progressbar'),
+                max = 100,
+                time = (1000/max)*5.5,
+                value = progressbar.width();
+        var loading = function() {
+            value += 1;
+            addValue = progressbar.width(value);
+            $('#progressbar').width(value + '%');
+            if (value == max) {
+                clearInterval(animate);
+            }
+        };
+        var animate = setInterval(function() {
+            loading();
+        }, time);
+    </script>
+</body>
+</html>

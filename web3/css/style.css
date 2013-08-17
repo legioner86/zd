@@ -1,0 +1,47 @@
+.hellow{
+    text-align: center;
+}
+
+textarea {
+    width: 925px;
+}
+
+.messages {
+    border: 1px solid;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.leftbord {
+    border-right: 1px dashed;
+}
+
+#wrap .messages {
+    background-color: #c4e3f3;
+}
+
+#wrap .messages:nth-child(2n-1) {
+    background-color: #bce8f1;
+}
+
+#sendmessage {
+    float: right;
+}
+input[type="checkbox"] {
+     margin: -2px 1px 0 2px;
+}
+#email {
+    float: right;
+}
+
+#next {
+    float: right;
+}
+
+#content {
+    margin: 45px 0 0;
+}
+
+#progressbar {
+    width: 100%;
+}

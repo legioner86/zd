@@ -1,0 +1,32 @@
+<div class="container" style="margin-top: 50px;">
+    <div class="thumbnail hellow">
+        <h1>Добро пожаловать!</h1>
+    </div>
+    <!-- юлок отправки сообщения -->
+    <div class="row" style="margin-top: 10px;">
+        <div class="span8 offset2">
+        <form class="form-horizontal" action="login.pl" method="post">
+            <div class="control-group">
+                <label class="control-label" for="login">Логин</label>
+                <div class="controls">
+                <input type="text" size="70" name="login" value="" id="login" placeholder="Логин"
+                       onkeyup="return validate(event, this)" maxlength="35" class="span4">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="pass">Пароль</label>
+                <div class="controls">
+                <input type="password" size="70" name="pass" value="" id="pass" placeholder="Пароль"
+                       onkeyup="return validate(event, this)" maxlength="35" class="span4">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                <button type="submit" id="goauth" class="btn btn-success btn-large" disabled>Войти</button>
+
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
